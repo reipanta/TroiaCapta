@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Infrastructure
 {
@@ -10,9 +8,11 @@ namespace Infrastructure
 
         private void Awake()
         {
+            Debug.Log("GameBootloader Awake");
             _game = new Game();
+            _game.StateMachine.EntryPoint<BootStrapState>();
             DontDestroyOnLoad(this);
-            //SceneManager.LoadScene("MainGame");
+            SceneLoader.LoadScene("MainGame");
         }
     }
 }

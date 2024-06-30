@@ -5,10 +5,11 @@ namespace Infrastructure
     public class Game
     {
         public static IInputService InputService;
+        public GameStateMachine StateMachine;
 
         public Game()
         {
-            InputService = new DefaultInput();
+            StateMachine = new GameStateMachine();
         }
     }
 }

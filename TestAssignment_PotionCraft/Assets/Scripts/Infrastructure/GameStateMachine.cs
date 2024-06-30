@@ -5,20 +5,23 @@ namespace Infrastructure
 {
     public class GameStateMachine
     {
-        private readonly Dictionary<Type, IState> _states;
+        private Dictionary<Type, IState> _states;
         private IState _activeState;
 
         public GameStateMachine()
         {
-            _states = new Dictionary<Type, IState>();
+            _states = new Dictionary<Type, IState>
+            {
+                [typeof(BootStrapState)] = new BootStrapState(this)
+            };
         }
 
         public void EntryPoint<TState>() where TState : IState
         {
             _activeState?.Exit();
-            IState _state = _states[typeof(IState)];
-            _activeState = _state;
-            _state.Enter();
+            IState state = _states[typeof(TState)];
+            _activeState = state;
+            state.Enter();
         }
     }
 }
