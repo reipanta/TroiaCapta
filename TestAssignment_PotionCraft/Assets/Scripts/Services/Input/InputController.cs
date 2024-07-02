@@ -17,12 +17,12 @@ namespace Services.Input
          {
              if (InputHandler.IsRButtonPressedOnce())
              {
-                 Debug.Log("R button pressed!");
+                 //Debug.Log("R button pressed!");
              }
 
              if (InputHandler.IsLeftMouseButtonDown())
              {
-                 Debug.Log("LMB down!");
+                 //Debug.Log("LMB down!");
              }
          }
     }
