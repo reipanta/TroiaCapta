@@ -1,6 +1,4 @@
-﻿using UnityEditor.U2D.Aseprite;
-using UnityEngine;
-using static UnityEngine.Tilemaps.Tile;
+﻿using UnityEngine;
 
 namespace Data
 {

@@ -13,8 +13,9 @@ public class ObjectController : MonoBehaviour
     // This method is called from a Spawner
     public void Spawn(Spawner spawner)
     {
+        Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _ingredient = spawner.GetIngredient(); // Calling a spawner method to return a certain ingredient with initialized values
-        Instantiate(_ingredient.IngredientPrefab, Input.mousePosition.normalized, Quaternion.identity); // Spawning!
+        Instantiate(_ingredient.IngredientPrefab, (Vector2)spawnPosition, Quaternion.identity); // Spawning!
         Debug.Log($"Ingredient {_ingredient.Name} has exactly {_ingredient.Points} points to it!");
     }
 
