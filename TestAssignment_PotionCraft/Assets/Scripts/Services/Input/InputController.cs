@@ -17,7 +17,7 @@ namespace Services.Input
          {
              if (InputHandler.IsRButtonPressedOnce())
              {
-                 //Debug.Log("R button pressed!");
+                 GameBootloader.OnRestart();
              }
 
              if (InputHandler.IsLeftMouseButtonDown())

@@ -14,5 +14,10 @@ namespace Infrastructure
             DontDestroyOnLoad(this);
             SceneLoader.LoadScene("MainGame");
         }
+
+        public static void OnRestart()
+        {
+            SceneLoader.LoadScene("MainGame");
+        }
     }
 }
