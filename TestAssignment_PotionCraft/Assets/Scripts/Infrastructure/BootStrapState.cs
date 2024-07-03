@@ -1,5 +1,5 @@
 ﻿using System;
-using Services.Input;
+using GameServices.Input;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

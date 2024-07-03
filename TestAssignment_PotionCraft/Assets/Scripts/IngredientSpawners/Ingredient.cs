@@ -1,5 +1,7 @@
-﻿using Data;
+﻿using System;
+using Data;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace IngredientSpawners
 {
@@ -15,10 +17,12 @@ namespace IngredientSpawners
         {
             get { return _ingredientPrefab; }
         }
+
         public int Points
         {
             get { return _points; }
         }
+
         public string Name
         {
             get { return _name; }

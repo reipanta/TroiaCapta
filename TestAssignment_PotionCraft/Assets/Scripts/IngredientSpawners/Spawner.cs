@@ -1,4 +1,5 @@
 ﻿using Data;
+using GameServices.Input;
 using UnityEngine;
 
 namespace IngredientSpawners
@@ -32,6 +33,7 @@ namespace IngredientSpawners
         private void OnMouseDown()
         {
             ObjectController.Instance.Spawn(this);
+            
         }
     }
 }

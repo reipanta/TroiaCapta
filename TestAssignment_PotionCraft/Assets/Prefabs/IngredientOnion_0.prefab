@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 1359130487136846515}
   - component: {fileID: 376703389085771356}
   - component: {fileID: 8809583391203086090}
-  - component: {fileID: 2033164665441752033}
-  m_Layer: 0
+  - component: {fileID: 4042541513996469393}
+  - component: {fileID: -5192247588234193998}
+  m_Layer: 3
   m_Name: IngredientOnion_0
-  m_TagString: Untagged
+  m_TagString: Collidable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +97,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 60eecf93c8d03dd43992ada26fbf939f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -187,7 +188,24 @@ PolygonCollider2D:
       - {x: 0.14999999, y: -1.2099999}
       - {x: 0.22999999, y: -1.1999999}
   m_UseDelaunayMesh: 0
---- !u!50 &2033164665441752033
+--- !u!114 &4042541513996469393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031403168743180471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff29704972549a8b82cbdc50fef737f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damping: 5
+  frequency: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!50 &-5192247588234193998
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -199,18 +217,18 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 60eecf93c8d03dd43992ada26fbf939f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0

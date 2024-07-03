@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Services.Input
+﻿namespace GameServices.Input
 {
     public interface IInputService
     {

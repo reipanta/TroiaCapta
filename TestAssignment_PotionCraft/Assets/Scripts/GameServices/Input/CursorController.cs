@@ -1,9 +1,6 @@
-﻿using System;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
-namespace Services.Input
+namespace GameServices.Input
 {
     public class CursorController : MonoBehaviour
     {

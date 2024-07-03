@@ -1,7 +1,7 @@
 using Infrastructure;
 using UnityEngine;
 
-namespace Services.Input
+namespace GameServices.Input
 {
     public class InputController : MonoBehaviour
     {

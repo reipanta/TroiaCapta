@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 7932413076467625386}
   - component: {fileID: 3941133582934320571}
   - component: {fileID: 1532297217423525452}
-  - component: {fileID: 6706814029174473143}
-  m_Layer: 0
+  - component: {fileID: 3214660724234337442}
+  - component: {fileID: 3581897649906633751}
+  m_Layer: 3
   m_Name: IngredientPepper_0
-  m_TagString: Untagged
+  m_TagString: Collidable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +97,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 60eecf93c8d03dd43992ada26fbf939f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -190,7 +191,24 @@ PolygonCollider2D:
       - {x: 0.72999996, y: -1.0849999}
       - {x: 0.79999995, y: -1.005}
   m_UseDelaunayMesh: 0
---- !u!50 &6706814029174473143
+--- !u!114 &3214660724234337442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6926692532276034067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dff29704972549a8b82cbdc50fef737f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damping: 5
+  frequency: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!50 &3581897649906633751
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -202,18 +220,18 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 60eecf93c8d03dd43992ada26fbf939f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0

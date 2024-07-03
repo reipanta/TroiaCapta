@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameServices.Input;
 using IngredientSpawners;
-using UnityEditor;
 using UnityEngine;
 
 public class ObjectController : MonoBehaviour
@@ -14,7 +14,8 @@ public class ObjectController : MonoBehaviour
     public void Spawn(Spawner spawner)
     {
         Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        _ingredient = spawner.GetIngredient(); // Calling a spawner method to return a certain ingredient with initialized values
+        _ingredient =
+            spawner.GetIngredient(); // Calling a spawner method to return a certain ingredient with initialized values
         Instantiate(_ingredient.IngredientPrefab, (Vector2)spawnPosition, Quaternion.identity); // Spawning!
         Debug.Log($"Ingredient {_ingredient.Name} has exactly {_ingredient.Points} points to it!");
     }

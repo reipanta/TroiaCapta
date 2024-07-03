@@ -53,6 +53,7 @@ namespace MainCamera
                 _referenceResolution.y = _referenceResolution.x / targetAspect;
             }
 
+            // TODO: Need to reference this differently since prefab can't load this object and build doesn;t work properly
             canvasScaler.referenceResolution = _referenceResolution;
         }
 

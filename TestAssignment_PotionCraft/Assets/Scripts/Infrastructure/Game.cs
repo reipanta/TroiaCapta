@@ -1,4 +1,4 @@
-﻿using Services.Input;
+﻿using GameServices.Input;
 
 namespace Infrastructure
 {
