@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameServices.Input;
-using IngredientSpawners;
+using Interactables.IngredientSpawners;
 using UnityEngine;
 
 public class ObjectController : MonoBehaviour

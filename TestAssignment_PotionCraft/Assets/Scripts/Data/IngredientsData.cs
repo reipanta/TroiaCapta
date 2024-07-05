@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Infrastructure;
+using UnityEngine;
 
 namespace Data
 {
@@ -8,6 +9,5 @@ namespace Data
         public new string name;
         public int points;
         public GameObject ingredientPrefab;
-
     }
 }

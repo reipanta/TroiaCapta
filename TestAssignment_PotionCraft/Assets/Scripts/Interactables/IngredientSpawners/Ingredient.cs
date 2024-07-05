@@ -1,9 +1,7 @@
-﻿using System;
-using Data;
+﻿using Data;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
-namespace IngredientSpawners
+namespace Interactables.IngredientSpawners
 {
     public class Ingredient : MonoBehaviour
     {

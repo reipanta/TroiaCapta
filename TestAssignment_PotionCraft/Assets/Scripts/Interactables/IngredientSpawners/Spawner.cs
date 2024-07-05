@@ -1,8 +1,7 @@
 ﻿using Data;
-using GameServices.Input;
 using UnityEngine;
 
-namespace IngredientSpawners
+namespace Interactables.IngredientSpawners
 {
     // Spawner, Ingredient and ObjectController classes
     // represent a Factory pattern that spawns appropriate Products

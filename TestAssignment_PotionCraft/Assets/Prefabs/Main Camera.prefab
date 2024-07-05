@@ -154,4 +154,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27dfd5b7d24dc5c44a7eebd83e70290f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasScaler: {fileID: 0}
+  canvasScaler: {fileID: 8171823840289281533, guid: 9aa7a6b796a0a6e4ba15a0301e76e23c, type: 3}
