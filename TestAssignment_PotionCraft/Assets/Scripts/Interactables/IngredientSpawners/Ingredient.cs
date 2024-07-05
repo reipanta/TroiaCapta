@@ -6,6 +6,8 @@ namespace Interactables.IngredientSpawners
     public class Ingredient : MonoBehaviour
     {
         // These fields are containers for data that will be assigned from ScriptableObject
+        public IngredientsData _ingredientsData;
+        
         private string _name;
         private int _points;
         private GameObject _ingredientPrefab;
@@ -29,6 +31,7 @@ namespace Interactables.IngredientSpawners
         // This method assigns data from appropriate ScriptableObject to this object's fields
         public void Initialize(IngredientsData ingredientsData)
         {
+            _ingredientsData = ingredientsData;
             _name = ingredientsData.name;
             _points = ingredientsData.points;
             _ingredientPrefab = ingredientsData.ingredientPrefab;

@@ -1,32 +1,21 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using Data;
+using Interactables.IngredientSpawners;
 using UnityEngine;
+using UnityEngine.Events;
 using Component = System.ComponentModel.Component;
 
 namespace EventSystem
 {
-    [CreateAssetMenu(menuName = "GameEvent")]
-    public class GameEvent : ScriptableObject
+    public static class GameEvent
     {
-        public List<GameEventListener> listeners = new List<GameEventListener>();
+        public static readonly IngredientEvents Ingredients = new IngredientEvents();
 
-        public void Raise(Component sender, object data)
+        public class IngredientEvents
         {
-            for (int i = 0; i < listeners.Count; i++)
-            {
-                listeners[i].OnEventRaised(sender, data);
-            }
-        }
-
-        public void Register(GameEventListener listener)
-        {
-            if(!listeners.Contains(listener))
-                listeners.Add(listener);
-        }
-
-        public void Unregister(GameEventListener listener)
-        {
-            if(listeners.Contains(listener))
-                listeners.Remove(listener);
+            public UnityEvent<IngredientsData> OnThrownToPot;
+            public UnityEvent<GameObject> OnMealComplete;
         }
     }
 }
