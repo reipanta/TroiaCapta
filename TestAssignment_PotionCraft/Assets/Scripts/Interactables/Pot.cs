@@ -10,8 +10,8 @@ namespace Interactables
 {
     public class Pot : MonoBehaviour
     {
-        private List<IngredientsData> _listOfIngredients;
-        private List<IngredientsData> _ingredientsInThePot;
+        private List<Ingredient> _listOfIngredients;
+        private List<Ingredient> _ingredientsInThePot;
 
         private void Start()
         {
@@ -21,7 +21,7 @@ namespace Interactables
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            GameEvent.Ingredients.OnThrownToPot.Invoke(other.gameObject.GetComponent<IngredientsData>());
+            GameEvent.Ingredients.OnThrownToPot.Invoke(other.gameObject.GetComponentInParent<Ingredient>());
             Destroy(other.gameObject);
         }
     }

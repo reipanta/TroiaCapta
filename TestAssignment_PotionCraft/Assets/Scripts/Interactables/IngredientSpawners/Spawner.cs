@@ -1,4 +1,6 @@
-﻿using Data;
+﻿using System;
+using Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Interactables.IngredientSpawners
@@ -12,27 +14,31 @@ namespace Interactables.IngredientSpawners
         [SerializeField] private IngredientsData ingredientsData;
         private Ingredient _ingredient;
 
-        // This public method provides an interface for the created ingredient
+        // This public method provides an interface for the created ingredient 
+        // Vector3 position parameter is needed to spawn objects at mouse position
         // It also assigns data to the new object via AssignData();
-        public Ingredient GetIngredient()
+        public Ingredient CreateIngredient(Vector3 position)
         {
-            AssignData();
+            InitializeIngredient();
+            _ingredient.transform.position = position;
             return _ingredient;
         }
 
-        // Assigns corresponding ScriptableObject data to an ingredient
-        private void AssignData()
+        // Creates a new GameObject and assigns
+        // corresponding ScriptableObject data to an ingredient
+        public void InitializeIngredient()
         {
-            _ingredient = gameObject.AddComponent<Ingredient>();
-            _ingredient.Initialize(ingredientsData);
+            _ingredient = new GameObject("IngredientHolder").AddComponent<Ingredient>();
+            _ingredient.Name = ingredientsData.name;
+            _ingredient.Points = ingredientsData.points;
+            _ingredient.IngredientPrefab = ingredientsData.ingredientPrefab;
         }
 
         // Spawns an ingredient object by calling a singleton method
         // and providing current spawner's data as a parameter
         private void OnMouseDown()
         {
-            ObjectController.Instance.Spawn(this);
-            
+            ObjectController.Instance.InstantiateIngredient(this);
         }
     }
 }
