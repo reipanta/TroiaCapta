@@ -2582,6 +2582,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1988149314}
     m_Modifications:
+    - target: {fileID: 644595319963588174, guid: 9aa7a6b796a0a6e4ba15a0301e76e23c, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 7193181439696308453, guid: 3b7f45b21e0afd74fb80dbda4804e719, type: 3}
+    - target: {fileID: 644595319963588174, guid: 9aa7a6b796a0a6e4ba15a0301e76e23c, type: 3}
+      propertyPath: imagesRow.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 644595319963588174, guid: 9aa7a6b796a0a6e4ba15a0301e76e23c, type: 3}
+      propertyPath: 'imagesRow.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2992574015330377438, guid: 9aa7a6b796a0a6e4ba15a0301e76e23c, type: 3}
       propertyPath: m_Name
       value: Canvas

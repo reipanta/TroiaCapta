@@ -12,6 +12,7 @@ namespace Interactables
     public class Pot : MonoBehaviour
     {
         private List<Ingredient> _ingredientsInThePot = new List<Ingredient>();
+        public static Ingredient IngredientToPassToIcon { get; set; }
 
         private void Start()
         {
@@ -24,6 +25,9 @@ namespace Interactables
         {
             // Get the parent object (the one that has Ingredient.cs with all the data attached) of the ingredient prefab
             Ingredient ingredient = other.gameObject.GetComponentInParent<Ingredient>();
+
+            // Using this property to have access to the thrown ingredient in the AboveThePotUI class
+            IngredientToPassToIcon = ingredient;
 
             // Invoke the event that triggers every time the ingredient is added to the pot
             GameEvent.Ingredients.OnThrownToPot?.Invoke(ingredient);

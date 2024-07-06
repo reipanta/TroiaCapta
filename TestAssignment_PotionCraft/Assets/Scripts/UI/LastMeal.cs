@@ -5,13 +5,17 @@ using EventSystem;
 using Interactables.IngredientSpawners;
 using TMPro;
 using UnityEngine;
+using Object = System.Object;
 
 namespace UI
 {
     public class LastMeal : MonoBehaviour
     {
         private TMP_Text _text;
-        private string mealTitle = "";
+        private string _mealTitle = "";
+        private string _ingredientCountResult = "";
+
+        public static List<MealData> LastMealResult = new List<MealData>();
 
         private void Start()
         {
@@ -20,7 +24,7 @@ namespace UI
 
         private void Update()
         {
-            _text.text = $"Последнее блюдо: {mealTitle} [{Score.CurrentMealScore}]";
+            _text.text = $"Последнее блюдо: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
         }
 
         private void OnEnable()
@@ -43,24 +47,24 @@ namespace UI
 
             if (meat != "Суп" && meat != "Овощное рагу")
             {
-                mealTitle = meat;
+                _mealTitle = meat;
             }
             else if (onion != "Суп")
             {
-                mealTitle = onion;
+                _mealTitle = onion;
             }
             else if (potato != "Суп")
             {
-                mealTitle = potato;
+                _mealTitle = potato;
             }
             else if (onion == "Суп" &&
                      potato == "Суп")
             {
-                mealTitle = "Овощное рагу";
+                _mealTitle = "Овощное рагу";
             }
             else
             {
-                mealTitle = "Суп";
+                _mealTitle = "Суп";
             }
 
             var ingredientCounts = mealIngredients.GroupBy(i => i.Name)
@@ -71,7 +75,10 @@ namespace UI
                 })
                 .ToList();
 
-            Debug.Log($"{ingredientCounts}");
+            _ingredientCountResult = string.Join(", ", ingredientCounts.Select(ic => $"{ic.Count} {ic.Name}"));
+
+            var data = new MealData().GetData(title: _mealTitle, _ingredientCountResult, Score.CurrentMealScore);
+            LastMealResult.Add(data);
         }
 
         private string CheckForMeat(List<Ingredient> ingredients)
@@ -82,23 +89,23 @@ namespace UI
             switch (meatCounter)
             {
                 case 5:
-                    mealTitle = "Мясо в собственном соку";
+                    _mealTitle = "Мясо в собственном соку";
                     break;
                 case 4:
-                    mealTitle = "Мясо с гарниром";
+                    _mealTitle = "Мясо с гарниром";
                     break;
                 case 2 or 3:
-                    mealTitle = "Рагу";
+                    _mealTitle = "Рагу";
                     break;
                 case 0:
-                    mealTitle = "Овощное рагу";
+                    _mealTitle = "Овощное рагу";
                     break;
                 default:
-                    mealTitle = "Суп";
+                    _mealTitle = "Суп";
                     break;
             }
 
-            return mealTitle;
+            return _mealTitle;
         }
 
         private string CheckForOnion(List<Ingredient> ingredients)
@@ -109,14 +116,14 @@ namespace UI
             switch (onionCounter)
             {
                 case 4 or 5:
-                    mealTitle = "Луковый суп";
+                    _mealTitle = "Луковый суп";
                     break;
                 default:
-                    mealTitle = "Суп";
+                    _mealTitle = "Суп";
                     break;
             }
 
-            return mealTitle;
+            return _mealTitle;
         }
 
         private string CheckForPotato(List<Ingredient> ingredients)
@@ -127,14 +134,14 @@ namespace UI
             switch (potatoCounter)
             {
                 case 4 or 5:
-                    mealTitle = "Картофельное пюре";
+                    _mealTitle = "Картофельное пюре";
                     break;
                 default:
-                    mealTitle = "Суп";
+                    _mealTitle = "Суп";
                     break;
             }
 
-            return mealTitle;
+            return _mealTitle;
         }
     }
 }
