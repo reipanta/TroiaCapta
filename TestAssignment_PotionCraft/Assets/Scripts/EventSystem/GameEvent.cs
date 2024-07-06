@@ -10,12 +10,18 @@ namespace EventSystem
 {
     public static class GameEvent
     {
-        public static readonly IngredientEvents Ingredients = new IngredientEvents();
+        public static IngredientEvents Ingredients = new IngredientEvents();
+        public static UIRestartButtonEvent RestartButtonEvent = new UIRestartButtonEvent();
 
         public class IngredientEvents
         {
-            public UnityEvent<Ingredient> OnThrownToPot;
-            public UnityEvent<Ingredient> OnMealComplete;
+            public UnityEvent<Ingredient> OnThrownToPot = new UnityEvent<Ingredient>();
+            public UnityEvent OnMealComplete = new UnityEvent();
+        }
+
+        public class UIRestartButtonEvent
+        {
+            public UnityEvent OnRestartButtonHover = new UnityEvent();
         }
     }
 }

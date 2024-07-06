@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2893466122835279720}
   - component: {fileID: 4385169705259515703}
   - component: {fileID: 1458647746137327605}
+  - component: {fileID: 4017717433098322572}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -134,6 +135,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4017717433098322572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2988714698573695587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db38a0cdbf3245b58ead39f0704a7f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2992574015330377438
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +339,7 @@ GameObject:
   - component: {fileID: 7011837999501361588}
   - component: {fileID: 999724731246365240}
   - component: {fileID: 4514542260389598917}
+  - component: {fileID: 5227590933237182309}
   m_Layer: 5
   m_Name: ResetButton
   m_TagString: Untagged
@@ -390,6 +404,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5227590933237182309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362449361192040133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6252120ae6b2744786a36257002bb52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5739097068429702798
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +427,7 @@ GameObject:
   - component: {fileID: 7636935915567633906}
   - component: {fileID: 2803426679323090786}
   - component: {fileID: 1868219404722045484}
+  - component: {fileID: 7263588605767250285}
   m_Layer: 5
   m_Name: BestMeal
   m_TagString: Untagged
@@ -524,6 +551,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7263588605767250285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5739097068429702798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d874f057a1a647e897539d70d6b7632d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7472431437613765231
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +574,7 @@ GameObject:
   - component: {fileID: 7025545682257238745}
   - component: {fileID: 4913752734600767376}
   - component: {fileID: 7791115362234231660}
+  - component: {fileID: 6777891121198573619}
   m_Layer: 5
   m_Name: LastMeal
   m_TagString: Untagged
@@ -658,3 +698,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6777891121198573619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472431437613765231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7be3147ae044ae8b9ed1364b97b317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

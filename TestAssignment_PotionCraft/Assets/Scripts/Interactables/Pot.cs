@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Data;
 using EventSystem;
 using Interactables.IngredientSpawners;
+using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,19 +11,42 @@ namespace Interactables
 {
     public class Pot : MonoBehaviour
     {
-        private List<Ingredient> _listOfIngredients;
-        private List<Ingredient> _ingredientsInThePot;
+        private List<Ingredient> _ingredientsInThePot = new List<Ingredient>();
 
         private void Start()
         {
-            _listOfIngredients = ObjectController.Instance.spawnedIngredients;
+            // Every new ingredient thrown into the pot triggers an update to the variable 
             _ingredientsInThePot = ObjectController.Instance.ingredientsInThePot;
         }
 
+        // Ingredient reacts with the trigger collider2D on the pot
         void OnTriggerEnter2D(Collider2D other)
         {
-            GameEvent.Ingredients.OnThrownToPot.Invoke(other.gameObject.GetComponentInParent<Ingredient>());
-            Destroy(other.gameObject);
+            // Get the parent object (the one that has Ingredient.cs with all the data attached) of the ingredient prefab
+            Ingredient ingredient = other.gameObject.GetComponentInParent<Ingredient>();
+
+            // Invoke the event that triggers every time the ingredient is added to the pot
+            GameEvent.Ingredients.OnThrownToPot?.Invoke(ingredient);
+
+            if (_ingredientsInThePot.Count == 5)
+            {
+                // If there are 5 ingredients in the pot invoke an event OnMealComplete
+                CreateMeal();
+
+                // Clear the list of ingredients in the pot
+                _ingredientsInThePot.Clear();
+                ObjectController.Instance.ingredientsInThePot =
+                    _ingredientsInThePot; // Assign the new 0 value to the ObjectController
+            }
+
+            Destroy(ingredient.gameObject); // Destroy the thrown ingredient
+        }
+
+        void CreateMeal()
+        {
+            GameEvent.Ingredients.OnMealComplete?.Invoke();
+
+            Debug.Log("MEAL IS READY MOTHERFUCKER");
         }
     }
 }

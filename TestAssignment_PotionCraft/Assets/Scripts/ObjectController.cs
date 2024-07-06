@@ -13,19 +13,22 @@ public class ObjectController : MonoBehaviour
     public static ObjectController Instance; // Singleton pattern 
     private Ingredient _ingredient; // Holder for the returned value taken from Spawner in the InstantiateIngredient method
     
-    public List<Ingredient> spawnedIngredients = new List<Ingredient>();
     public List<Ingredient> ingredientsInThePot = new List<Ingredient>();
     
+    // Subscribing the method to event listener
     private void OnEnable()
     {
         GameEvent.Ingredients.OnThrownToPot?.AddListener(AddToListOfIngredients);
     }
 
+    // Unsubscribing the method from the event listener
     private void OnDisable()
     {
         GameEvent.Ingredients.OnThrownToPot?.RemoveListener(AddToListOfIngredients);
     }
 
+    // This method adds an ingredient in the pot to the watchlist
+    // Upon receiving the 5th ingredient the pot will produce a meal
     private void AddToListOfIngredients(Ingredient ingredient)
     {
         ingredientsInThePot.Add(ingredient);
