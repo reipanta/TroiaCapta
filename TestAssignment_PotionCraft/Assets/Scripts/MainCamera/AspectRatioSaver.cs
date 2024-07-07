@@ -29,6 +29,7 @@ namespace MainCamera
         {
             // Initializing camera in Start() because doing so in Update() is very memory expensive
             _camera = GetComponent<Camera>();
+            //canvasScaler = GetComponent<Canvas>().gameObject.GetComponent<CanvasScaler>();
             _referenceResolution =
                 new Vector2(Screen.width,
                     Screen.height); // Taking current screen size and assigning it to the variable
@@ -54,6 +55,7 @@ namespace MainCamera
             }
 
             // TODO: Need to reference this differently since prefab can't load this object and build doesn;t work properly
+            //canvasScaler.referenceResolution = _referenceResolution;
             canvasScaler.referenceResolution = _referenceResolution;
         }
 

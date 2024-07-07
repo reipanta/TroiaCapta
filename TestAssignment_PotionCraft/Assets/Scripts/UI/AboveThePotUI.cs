@@ -12,15 +12,17 @@ namespace UI
 {
     public class AboveThePotUI : MonoBehaviour
     {
-        [SerializeField] private GameObject image;
-        private Vector2 _parentPosition;
-        private Vector2 _spacing = new Vector2(-40, 0);
+        [SerializeField] private GameObject questionMarkImage;
+        [SerializeField] private GameObject[] prefabIngredientImage;
+        private Transform _parentPosition;
+        private float _spacing = 50;
         private GameObject[] _imagesRow = new GameObject[5];
         private Ingredient _lastIngredient;
+        private int _counter = 0;
 
         private void Start()
         {
-            _parentPosition = GetComponent<Transform>().position;
+            _parentPosition = GetComponent<Transform>();
             FillDefaultUI();
         }
 
@@ -40,23 +42,44 @@ namespace UI
         {
             ingredient = Pot.IngredientToPassToIcon;
 
-            switch (ingredient.Name)
+            var currentIngredient = FindPrefabByName(ingredient.Name);
+
+            GameObject newImage = Instantiate(currentIngredient, _parentPosition);
+            _imagesRow[_counter] = currentIngredient;
+
+            float xPos = _counter * (newImage.GetComponent<RectTransform>().rect.width + _spacing);
+
+            newImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, 0);
+
+            transform.GetChild(_counter).gameObject.GetComponent<Image>().enabled = false;
+
+            _counter++;
+        }
+
+        private GameObject FindPrefabByName(string name)
+        {
+            foreach (GameObject prefab in prefabIngredientImage)
             {
-                case "Мясо":
-                    break;
-                case "Болгарский перец":
-                    break;
-                case "Лук":
-                    break;
-                case "Морковь":
-                    break;
-                case "Картофель":
-                    break;
+                if (prefab.name == name)
+                {
+                    return prefab; // Return the found prefab
+                }
             }
+
+            return null;
         }
 
         private void ClearPotUI()
         {
+            _counter = 0;
+
+            foreach (Transform child in transform)
+            {
+                Debug.Log("Child: " + child.gameObject.name);
+                Destroy(child.gameObject);
+            }
+
+            FillDefaultUI();
         }
 
         // Fill with default question marks at the start
@@ -64,7 +87,12 @@ namespace UI
         {
             for (int i = 0; i < _imagesRow.Length; i++)
             {
-                //Instantiate(image, _parentPosition);
+                GameObject newImage = Instantiate(questionMarkImage, _parentPosition);
+                _imagesRow[i] = questionMarkImage;
+
+                float xPos = i * (newImage.GetComponent<RectTransform>().rect.width + _spacing);
+
+                newImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(xPos, 0);
             }
         }
     }
