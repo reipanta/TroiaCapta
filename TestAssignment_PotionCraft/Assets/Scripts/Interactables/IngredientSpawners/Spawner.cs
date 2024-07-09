@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Text;
 using Data;
-using Unity.VisualScripting;
+using GameServices.Input;
 using UnityEngine;
 
 namespace Interactables.IngredientSpawners
@@ -38,7 +39,18 @@ namespace Interactables.IngredientSpawners
         // and providing current spawner's data as a parameter
         private void OnMouseDown()
         {
-            ObjectController.Instance.InstantiateIngredient(this);
+            // Temporary switch off the collider of the spawner
+            // to get rid of newly spawned ingredients' physics bugs and flickering
+            GetComponent<Collider2D>().enabled = false;
+
+            // Spawn initialized ingredient from the ObjectController class
+            ObjectController.Instance.InstantiateIngredient(this); 
+        }
+
+        private void OnMouseUp()
+        {
+            // Switch the collider back again after spawning the ingredient
+            GetComponent<Collider2D>().enabled = true;
         }
     }
 }

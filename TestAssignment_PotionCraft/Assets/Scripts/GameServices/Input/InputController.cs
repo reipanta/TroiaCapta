@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace GameServices.Input
 {
+    // This is present in the game at runtime
     public class InputController : MonoBehaviour
     {
-        public IInputService InputHandler;
-
+        public IInputService InputHandler; 
         private void Start()
         {
             InputHandler = Game.InputService;
