@@ -21,6 +21,7 @@ namespace UI
         private void Update()
         {
             _text.text = $"Счет: {_totalScore}";
+            // TODO: Make it event instead
         }
 
         private void OnEnable()

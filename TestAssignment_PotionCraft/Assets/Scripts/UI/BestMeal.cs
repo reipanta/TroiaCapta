@@ -20,6 +20,7 @@ namespace UI
         private void Update()
         {
             _text.text = $"Лучшее блюдо: {_highestScoreMeal.Title} ({_highestScoreMeal.IngredientCountResult}) [{_highestScoreMeal.CurrentMealScore}]";
+            // TODO: Make it event instead
         }
 
         private void OnEnable()

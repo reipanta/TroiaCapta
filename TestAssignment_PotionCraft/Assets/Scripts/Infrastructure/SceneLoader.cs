@@ -12,7 +12,6 @@ namespace Infrastructure
             // and can make game unresponsive for the loading time
             AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(sceneName);
             
-            // This event is triggered when loading is complete
             waitNextScene.completed += _ => onLoaded?.Invoke();
         }
     }

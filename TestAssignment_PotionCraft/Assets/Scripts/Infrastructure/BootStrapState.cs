@@ -16,14 +16,12 @@ namespace Infrastructure
 
         public void Enter()
         {
-            Debug.Log("Entering BootStrapState");
-            RegisterServices();
+           RegisterServices();
         }
 
         private void RegisterServices()
         {
             Game.InputService = SetupInputService();
-            Debug.Log("InputService registered: " + (Game.InputService != null));
         }
 
         public void Exit()

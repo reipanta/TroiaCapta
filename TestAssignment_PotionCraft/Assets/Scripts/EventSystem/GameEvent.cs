@@ -14,16 +14,14 @@ namespace EventSystem
         public static IngredientEvents Ingredients = new IngredientEvents();
         public static UIRestartButtonEvent RestartButtonEvent = new UIRestartButtonEvent();
 
-        public class IngredientEvents // This class is for any interactions regarding Ingredient status change, mostly used in UI
+        public class IngredientEvents
         {
-            // What happens after the ingredient is thrown into a pot
-            public UnityEvent<Ingredient> OnThrownToPot = new UnityEvent<Ingredient>(); 
-            
-            // What happens after the there are five ingredients in the pot = meal is complete
+            public UnityEvent<Ingredient> OnThrownToPot = new UnityEvent<Ingredient>();
+
             public UnityEvent OnMealComplete = new UnityEvent();
         }
 
-        public class UIRestartButtonEvent // This class contains an event for the restart button
+        public class UIRestartButtonEvent
         {
             public UnityEvent OnRestartButtonHover = new UnityEvent();
         }

@@ -7,16 +7,15 @@ namespace MainCamera
     {
         [SerializeField] private CanvasScaler canvasScaler;
 
-        // Storing Rect and Camera variables here since we don't want to create new objects in Update() every frame
         private Camera _camera;
         private Rect _rect;
         private Vector2 _referenceResolution;
 
-        // float values for 16:9 target aspect ratio 
+
         private const float TargetAspectWidth = 16.0f;
         private const float TargetAspectHeight = 9.0f;
 
-        // aspect = width / height, both targetAspect and currentAspect will be calculated inside the function
+
         private float _targetAspect;
         private float _currentAspect;
 
@@ -27,54 +26,45 @@ namespace MainCamera
 
         private void Start()
         {
-            // Initializing camera in Start() because doing so in Update() is very memory expensive
             _camera = GetComponent<Camera>();
-            //canvasScaler = GetComponent<Canvas>().gameObject.GetComponent<CanvasScaler>();
+
             _referenceResolution =
-                new Vector2(Screen.width,
-                    Screen.height); // Taking current screen size and assigning it to the variable
+                new Vector2(Screen.width, Screen.height);
             AdjustCanvasScaler();
         }
 
         // CanvasScaler also needs to be adjusted because of UI scaling issues
         private void AdjustCanvasScaler()
         {
-            // Maintain the 16:9 aspect ratio
             float targetAspect = TargetAspectWidth / TargetAspectHeight;
             float currentAspect = (float)Screen.width / Screen.height;
 
             if (currentAspect >= targetAspect)
             {
-                // If the current aspect is wider than the target, adjust the width
                 _referenceResolution.x = targetAspect * _referenceResolution.y;
             }
             else
             {
-                // If the current aspect is narrower than the target, adjust the height
                 _referenceResolution.y = _referenceResolution.x / targetAspect;
             }
 
             // TODO: Need to reference this differently since prefab can't load this object and build doesn;t work properly
-            //canvasScaler.referenceResolution = _referenceResolution;
+
             canvasScaler.referenceResolution = _referenceResolution;
         }
 
         private void LateUpdate()
         {
-            // Calling this function every frame to adjust aspect ratio when resizing the window
             SetCameraAspect_16x9();
         }
 
         void SetCameraAspect_16x9()
         {
-            // Calculating the aspect of 16:9 in one float number
             _targetAspect = TargetAspectWidth / TargetAspectHeight;
 
-            // Calculating the aspect of the current game window
-            // by accessing two static properties, width and height, of the Screen class
+
             _currentAspect = (float)Screen.width / (float)Screen.height;
 
-            // scaleHeight variable shows how much current aspect differs from 16:9 aspect vertically and how it should be adjusted  
             _scaleHeight = _currentAspect / _targetAspect;
 
             GenerateHorizontalBoxes();
@@ -84,19 +74,17 @@ namespace MainCamera
 
         private void GenerateHorizontalBoxes()
         {
-            if (_scaleHeight < 1.0f) // If true, then the screen is taller than the desired aspect ratio
+            if (_scaleHeight < 1.0f)
             {
-                _rect = _camera.rect; // Get current camera rectangle parameters
+                _rect = _camera.rect;
 
-                _rect.width = 1f; // Width goes from 0 to 1 and it's not affected by height so we default it to maximum
-                _rect.height = _scaleHeight; // scaleHeight < 1, so we set height to this number 
-                _rect.x = 0f; // x coordinate (width) isn't affected and stays default 
+                _rect.width = 1f;
+                _rect.height = _scaleHeight;
+                _rect.x = 0f;
 
-                _rect.y = (1f - _scaleHeight) / 2f; // The difference between max. height (1f) and scaleHeight
-                // is divided by 2 to create two equally shaped blackboxes
-                // at the top and at the bottom of the screen
+                _rect.y = (1f - _scaleHeight) / 2f;
 
-                _camera.rect = _rect; // Setting camera rectangle to the computated height & width values
+                _camera.rect = _rect;
             }
         }
 
@@ -106,14 +94,13 @@ namespace MainCamera
             {
                 _rect = _camera.rect;
 
-                _scaleWidth = 1f / _scaleHeight; // Inverting the ratio since scaleHeight >= 1 for this case
-                _rect.width = _scaleWidth; // Setting width to a current fraction of width
-                _rect.height =
-                    1f; // Again, height goes from 0 to 1 and it's not affected by width so we default it to maximum
-                _rect.x = (1f - _scaleWidth) / 2f; // Creating two similar blackboxes on the left and on the right
-                _rect.y = 0f; // y coordinate (height) isn't affected and stays default 
+                _scaleWidth = 1f / _scaleHeight;
+                _rect.width = _scaleWidth;
+                _rect.height = 1f;
+                _rect.x = (1f - _scaleWidth) / 2f;
+                _rect.y = 0f;
 
-                _camera.rect = _rect; // Setting camera rectangle to the computated height & width values
+                _camera.rect = _rect;
             }
         }
     }

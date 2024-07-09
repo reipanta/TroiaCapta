@@ -25,6 +25,7 @@ namespace UI
         private void Update()
         {
             _text.text = $"Последнее блюдо: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
+            // TODO: Make it event instead
         }
 
         private void OnEnable()

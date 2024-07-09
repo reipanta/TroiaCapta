@@ -13,14 +13,13 @@ namespace UI
     // This class operates the UI above the pot showing in-the-pot ingredients
     public class AboveThePotUI : MonoBehaviour
     {
-        // Putting needed prefabs in the inspector
         [SerializeField] private GameObject questionMarkImage;
         [SerializeField] private GameObject[] prefabIngredientImage;
-        
+
         private GameObject[] _imagesRow = new GameObject[5]; // 
         private Transform _parentPosition;
         private Ingredient _lastIngredient;
-        
+
         private float _spacing = 50;
         private int _counter = 0;
 
@@ -66,10 +65,9 @@ namespace UI
             {
                 if (prefab.name == name)
                 {
-                    return prefab; // Return the found prefab
+                    return prefab; 
                 }
             }
-
             return null;
         }
 

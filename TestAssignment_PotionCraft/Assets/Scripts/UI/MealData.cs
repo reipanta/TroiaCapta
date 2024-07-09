@@ -1,5 +1,6 @@
 ﻿namespace UI
 {
+    // This struct is created to hold the data of best and last meal
     public struct MealData
     {
         public string Title { get; set; }
