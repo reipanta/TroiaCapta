@@ -65,9 +65,10 @@ namespace UI
             {
                 if (prefab.name == name)
                 {
-                    return prefab; 
+                    return prefab;
                 }
             }
+
             return null;
         }
 
@@ -77,7 +78,6 @@ namespace UI
 
             foreach (Transform child in transform)
             {
-                Debug.Log("Child: " + child.gameObject.name);
                 Destroy(child.gameObject);
             }
 

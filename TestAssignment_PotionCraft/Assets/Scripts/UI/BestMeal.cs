@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace UI
 {
+    // This class 
     public class BestMeal : MonoBehaviour
     {
         private TMP_Text _text;
@@ -15,12 +16,6 @@ namespace UI
         private void Start()
         {
             _text = GetComponent<TMP_Text>();
-        }
-
-        private void Update()
-        {
-            _text.text = $"Лучшее блюдо: {_highestScoreMeal.Title} ({_highestScoreMeal.IngredientCountResult}) [{_highestScoreMeal.CurrentMealScore}]";
-            // TODO: Make it event instead
         }
 
         private void OnEnable()
@@ -48,6 +43,8 @@ namespace UI
             }
 
             _highestScoreMeal = highestScoreMeal;
+            
+            _text.text = $"Лучшее блюдо: {_highestScoreMeal.Title} ({_highestScoreMeal.IngredientCountResult}) [{_highestScoreMeal.CurrentMealScore}]";
         }
     }
 }

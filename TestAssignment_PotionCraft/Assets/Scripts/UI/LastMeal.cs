@@ -21,13 +21,7 @@ namespace UI
         {
             _text = GetComponent<TMP_Text>();
         }
-
-        private void Update()
-        {
-            _text.text = $"Последнее блюдо: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
-            // TODO: Make it event instead
-        }
-
+   
         private void OnEnable()
         {
             GameEvent.Ingredients.OnMealComplete?.AddListener(ShowLastMeal);
@@ -80,6 +74,8 @@ namespace UI
 
             var data = new MealData().GetData(title: _mealTitle, _ingredientCountResult, Score.CurrentMealScore);
             LastMealResult.Add(data);
+            
+            _text.text = $"Последнее блюдо: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
         }
 
         private string CheckForMeat(List<Ingredient> ingredients)

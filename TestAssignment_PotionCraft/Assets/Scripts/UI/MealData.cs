@@ -5,9 +5,9 @@
     {
         public string Title { get; set; }
         public string IngredientCountResult { get; set; }
-        public int CurrentMealScore { get; set; }
+        public float CurrentMealScore { get; set; }
 
-        public MealData GetData(string title, string ingredientCountResult, int currentMealScore)
+        public MealData GetData(string title, string ingredientCountResult, float currentMealScore)
         {
             var data = new MealData();
             data.Title = title;

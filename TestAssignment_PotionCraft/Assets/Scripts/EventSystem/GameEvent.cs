@@ -17,7 +17,6 @@ namespace EventSystem
         public class IngredientEvents
         {
             public UnityEvent<Ingredient> OnThrownToPot = new UnityEvent<Ingredient>();
-
             public UnityEvent OnMealComplete = new UnityEvent();
         }
 

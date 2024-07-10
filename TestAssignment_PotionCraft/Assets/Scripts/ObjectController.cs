@@ -30,7 +30,6 @@ public class ObjectController : MonoBehaviour
     private void AddToListOfIngredients(Ingredient ingredient)
     {
         ingredientsInThePot.Add(ingredient);
-        Debug.Log($"Ingredient {ingredient.Name} is now in the cooking pot");
     }
 
     public void InstantiateIngredient(Spawner spawnParameters)
@@ -40,7 +39,6 @@ public class ObjectController : MonoBehaviour
         _ingredient = spawnParameters.CreateIngredient((Vector2)spawnPosition);
 
         Instantiate(_ingredient.IngredientPrefab, _ingredient.transform);
-        Debug.Log($"Ingredient {_ingredient.Name} has exactly {_ingredient.Points} points to it!");
     }
 
     private void Awake()

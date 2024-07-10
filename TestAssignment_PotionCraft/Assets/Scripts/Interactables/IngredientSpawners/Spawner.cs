@@ -30,10 +30,10 @@ namespace Interactables.IngredientSpawners
 
         private void OnMouseDown()
         {
-            // Temporary switch off the collider of the spawner
+           // Temporary switch off the collider of the spawner
             // to get rid of newly spawned ingredients' physics bugs and flickering
             GetComponent<Collider2D>().enabled = false;
-
+            
             ObjectController.Instance.InstantiateIngredient(this);
         }
 
