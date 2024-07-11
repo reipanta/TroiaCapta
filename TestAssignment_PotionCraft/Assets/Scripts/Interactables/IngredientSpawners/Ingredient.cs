@@ -1,7 +1,5 @@
-﻿using System;
-using Data;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
+
 
 namespace Interactables.IngredientSpawners
 {

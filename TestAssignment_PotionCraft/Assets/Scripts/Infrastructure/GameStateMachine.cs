@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Infrastructure
 {
+    // State machine saves different game states
     public class GameStateMachine
     {
         private Dictionary<Type, IState> _states;

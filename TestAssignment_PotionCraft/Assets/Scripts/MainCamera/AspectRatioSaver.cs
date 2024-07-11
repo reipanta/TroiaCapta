@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 namespace MainCamera
 {
+    // Saving and modifying aspect ratio of a windowed game
     public class AspectRatioSaver : MonoBehaviour
     {
         [SerializeField] private CanvasScaler canvasScaler;

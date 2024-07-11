@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Infrastructure
 {
+    // Booting the game straight from the scene here
     public class GameBootloader : MonoBehaviour
     {
         private Game _game;

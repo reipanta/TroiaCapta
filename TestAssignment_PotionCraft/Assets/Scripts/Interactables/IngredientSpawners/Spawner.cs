@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-using Data;
-using GameServices.Input;
+﻿using Data;
 using UnityEngine;
 
 namespace Interactables.IngredientSpawners
@@ -11,6 +8,7 @@ namespace Interactables.IngredientSpawners
     public class Spawner : MonoBehaviour
     {
         [SerializeField] private IngredientsData ingredientsData;
+        [SerializeField] private LayerMask mask;
         private Ingredient _ingredient;
 
         public Ingredient CreateIngredient(Vector3 position)
@@ -30,10 +28,10 @@ namespace Interactables.IngredientSpawners
 
         private void OnMouseDown()
         {
-           // Temporary switch off the collider of the spawner
+            // Temporary switch off the collider of the spawner
             // to get rid of newly spawned ingredients' physics bugs and flickering
-            GetComponent<Collider2D>().enabled = false;
-            
+            //GetComponent<Collider2D>().enabled = false;
+
             ObjectController.Instance.InstantiateIngredient(this);
         }
 

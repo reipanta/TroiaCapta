@@ -1,9 +1,4 @@
-﻿using System;
-using Interactables.IngredientSpawners;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Serialization;
-using static UnityEngine.Input;
+﻿using UnityEngine;
 
 namespace GameServices.Input
 {
@@ -27,7 +22,7 @@ namespace GameServices.Input
             _mousePos = Camera.main.ScreenToWorldPoint(UnityEngine.Input.mousePosition);
             _collider2D = Physics2D.OverlapPoint(_mousePos, mask);
 
-            if (_collider2D != null)
+            if (_collider2D != null && !_collider2D.isTrigger)
             {
                 _rigidBody = _collider2D.attachedRigidbody;
 

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using EventSystem;
-using Interactables.IngredientSpawners;
 using TMPro;
 using UnityEngine;
 
@@ -35,7 +33,7 @@ namespace UI
             CurrentMealScore = 0;
 
             var mealIngredients = ObjectController.Instance.ingredientsInThePot;
-            
+
             var ingredientCounts = mealIngredients
                 .GroupBy(ingredient => ingredient.Name)
                 .ToDictionary(group => group.Key, group => group.Count());
@@ -46,7 +44,7 @@ namespace UI
                 float multiplier = GetMultiplier(count, ingredientCounts.Count);
                 CurrentMealScore += ingredient.Points * multiplier;
             }
-            
+
             _totalScore += CurrentMealScore;
 
             _text.text = $"Счет: {Convert.ToInt32(_totalScore)}";

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using Data;
+﻿using System.Collections.Generic;
 using EventSystem;
 using Interactables.IngredientSpawners;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Interactables
 {
-    // Controlling 
+    // Controlling the pot and logic that is bound to it
     public class Pot : MonoBehaviour
     {
         private List<Ingredient> _ingredientsInThePot = new List<Ingredient>();
@@ -32,11 +28,11 @@ namespace Interactables
             {
                 CreateMeal();
                 _ingredientsInThePot.Clear();
-                
-                ObjectController.Instance.ingredientsInThePot = _ingredientsInThePot; 
+
+                ObjectController.Instance.ingredientsInThePot = _ingredientsInThePot;
             }
 
-            Destroy(ingredient.gameObject); 
+            Destroy(ingredient.gameObject);
         }
 
         void CreateMeal()

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 using EventSystem;
 using Interactables.IngredientSpawners;
 using TMPro;
 using UnityEngine;
-using Object = System.Object;
+
 
 namespace UI
 {
+    // This class operates on the logic intended to show the last meal data to the UI 
     public class LastMeal : MonoBehaviour
     {
         private TMP_Text _text;
@@ -21,7 +21,7 @@ namespace UI
         {
             _text = GetComponent<TMP_Text>();
         }
-   
+
         private void OnEnable()
         {
             GameEvent.Ingredients.OnMealComplete?.AddListener(ShowLastMeal);
@@ -74,7 +74,7 @@ namespace UI
 
             var data = new MealData().GetData(title: _mealTitle, _ingredientCountResult, Score.CurrentMealScore);
             LastMealResult.Add(data);
-            
+
             _text.text = $"Последнее блюдо: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
         }
 

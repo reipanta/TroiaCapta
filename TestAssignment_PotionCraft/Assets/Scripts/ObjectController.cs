@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Data;
+﻿using System.Collections.Generic;
 using EventSystem;
-using GameServices.Input;
 using Interactables.IngredientSpawners;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 // This class controls ingredient spawning and also registers them upon being thrown into the pot 
 public class ObjectController : MonoBehaviour

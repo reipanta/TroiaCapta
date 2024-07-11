@@ -2,6 +2,7 @@
 
 namespace Infrastructure
 {
+    // Game state that corresponds to the main game
     public class Game
     {
         public static IInputService InputService;
