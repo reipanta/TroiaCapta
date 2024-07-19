@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9030914042839077393}
   - component: {fileID: 3019995904880878448}
   - component: {fileID: 2503241691481041281}
-  - component: {fileID: 3310723816503884148}
+  - component: {fileID: 6301875629947015004}
   m_Layer: 3
   m_Name: Meat
   m_TagString: Collidable
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -2063850819
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7982359949318768756, guid: 373b8ce671fc6d841bbc777229734724, type: 3}
+  m_Sprite: {fileID: 6796020039971107403, guid: a707e42dd92b7e9488b00518eca4fc00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 5.3667912
+  m_Mass: 3.8018374
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -131,7 +131,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 8
---- !u!60 &3310723816503884148
+--- !u!60 &6301875629947015004
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 60eecf93c8d03dd43992ada26fbf939f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -169,7 +169,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.39, y: 3.89}
+    oldSize: {x: 4.1, y: 7.78}
     newSize: {x: 2.39, y: 3.89}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -177,16 +177,31 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.2682886, y: 1.7564572}
-      - {x: 0.33117256, y: 1.0680819}
-      - {x: 1.0376514, y: -0.1051639}
-      - {x: 1.1806893, y: -1.0076321}
-      - {x: 0.8484751, y: -1.6628517}
-      - {x: 0.22623405, y: -1.9333527}
-      - {x: -0.63151103, y: -1.7861785}
-      - {x: -1.017231, y: -1.294191}
-      - {x: -1.1801748, y: -0.40745953}
-      - {x: -0.49696127, y: 0.48752183}
-      - {x: -0.24092022, y: 1.045329}
-      - {x: -0.12690863, y: 1.95133}
+    - - {x: 2.0533872, y: 3.8496478}
+      - {x: 2.0660598, y: 3.667255}
+      - {x: 1.863374, y: 3.522883}
+      - {x: 1.6991245, y: -1.6311512}
+      - {x: 1.7352195, y: -2.7986917}
+      - {x: 2.0552695, y: -3.6256025}
+      - {x: 2.0983696, y: -3.8300922}
+      - {x: 1.6729238, y: -3.8789208}
+      - {x: 1.3878641, y: -3.8319712}
+      - {x: 1.3266972, y: -3.834638}
+      - {x: -0.54082835, y: -3.8890905}
+      - {x: -0.8840394, y: -3.9136956}
+      - {x: -1.3065059, y: -3.4064138}
+      - {x: -0.6932706, y: -2.5431805}
+      - {x: -0.8068987, y: -1.984031}
+      - {x: -1.8545946, y: 0.4854499}
+      - {x: -2.1274376, y: 0.89551413}
+      - {x: -2.0565448, y: 1.2161136}
+      - {x: -1.8349465, y: 2.3564754}
+      - {x: -1.8593695, y: 2.7804291}
+      - {x: -1.5469635, y: 3.20853}
+      - {x: -0.9485327, y: 3.5009162}
+      - {x: -0.69388217, y: 3.322637}
+      - {x: -0.018899731, y: 3.164159}
+      - {x: 1.2783887, y: 3.5922756}
+      - {x: 1.337417, y: 3.7664862}
+      - {x: 1.9521018, y: 3.9243183}
   m_UseDelaunayMesh: 0
