@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8152249542814146703
+--- !u!1 &7109449768200965482
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5869414719654827720}
-  - component: {fileID: 7629326708094355155}
-  - component: {fileID: 7248012873905539266}
+  - component: {fileID: 9121554467431883344}
+  - component: {fileID: 7644115582353832938}
+  - component: {fileID: 8704101237320431006}
   m_Layer: 5
-  m_Name: "\u041B\u0443\u043A"
+  m_Name: Scythian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &5869414719654827720
+--- !u!224 &9121554467431883344
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8152249542814146703}
+  m_GameObject: {fileID: 7109449768200965482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.43, y: 1, z: 1}
+  m_LocalScale: {x: 0.64, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -37,21 +37,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7629326708094355155
+--- !u!222 &7644115582353832938
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8152249542814146703}
+  m_GameObject: {fileID: 7109449768200965482}
   m_CullTransparentMesh: 1
---- !u!114 &7248012873905539266
+--- !u!114 &8704101237320431006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8152249542814146703}
+  m_GameObject: {fileID: 7109449768200965482}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -889832015632683177, guid: 01d76c227ca0ec24abbfde52513b0f78, type: 3}
+  m_Sprite: {fileID: 5842630367150095500, guid: 09a3998ca6b1d324f9a743507d3217d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

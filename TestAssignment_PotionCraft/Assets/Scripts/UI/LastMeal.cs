@@ -40,26 +40,22 @@ namespace UI
             var onion = CheckForOnion(mealIngredients);
             var potato = CheckForPotato(mealIngredients);
 
-            if (meat != "Суп" && meat != "Овощное рагу")
+            if (meat != "Mycenians")
             {
                 _mealTitle = meat;
             }
-            else if (onion != "Суп")
+            else if (onion != "Mycenians")
             {
                 _mealTitle = onion;
             }
-            else if (potato != "Суп")
+            else if (potato != "Mycenians")
             {
                 _mealTitle = potato;
             }
-            else if (onion == "Суп" &&
-                     potato == "Суп")
-            {
-                _mealTitle = "Овощное рагу";
-            }
+            
             else
             {
-                _mealTitle = "Суп";
+                _mealTitle = "Mycenians";
             }
 
             var ingredientCounts = mealIngredients.GroupBy(i => i.Name)
@@ -75,30 +71,27 @@ namespace UI
             var data = new MealData().GetData(title: _mealTitle, _ingredientCountResult, Score.CurrentMealScore);
             LastMealResult.Add(data);
 
-            _text.text = $"Последнее блюдо: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
+            _text.text = $"Last group: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
         }
 
         private string CheckForMeat(List<Ingredient> ingredients)
         {
-            string meatString = "Мясо";
+            string meatString = "Etruscan";
             int meatCounter = ingredients.Count(i => i.Name == meatString);
 
             switch (meatCounter)
             {
                 case 5:
-                    _mealTitle = "Мясо в собственном соку";
+                    _mealTitle = "Etruscan nobility";
                     break;
                 case 4:
-                    _mealTitle = "Мясо с гарниром";
+                    _mealTitle = "Ligurians";
                     break;
                 case 2 or 3:
-                    _mealTitle = "Рагу";
-                    break;
-                case 0:
-                    _mealTitle = "Овощное рагу";
+                    _mealTitle = "Mycenians";
                     break;
                 default:
-                    _mealTitle = "Суп";
+                    _mealTitle = "Mycenians";
                     break;
             }
 
@@ -107,16 +100,16 @@ namespace UI
 
         private string CheckForOnion(List<Ingredient> ingredients)
         {
-            string onionString = "Лук";
+            string onionString = "Amazon";
             int onionCounter = ingredients.Count(i => i.Name == onionString);
 
             switch (onionCounter)
             {
                 case 4 or 5:
-                    _mealTitle = "Луковый суп";
+                    _mealTitle = "Amazon riders";
                     break;
                 default:
-                    _mealTitle = "Суп";
+                    _mealTitle = "Mycenians";
                     break;
             }
 
@@ -125,16 +118,16 @@ namespace UI
 
         private string CheckForPotato(List<Ingredient> ingredients)
         {
-            string potatoString = "Картофель";
+            string potatoString = "Macedonian";
             int potatoCounter = ingredients.Count(i => i.Name == potatoString);
 
             switch (potatoCounter)
             {
                 case 4 or 5:
-                    _mealTitle = "Картофельное пюре";
+                    _mealTitle = "Pelides";
                     break;
                 default:
-                    _mealTitle = "Суп";
+                    _mealTitle = "Mycenians";
                     break;
             }
 

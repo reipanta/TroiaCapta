@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5e7ce7c31f5467790afdcccc8e89bc2, type: 3}
-  m_Name: Pepper
+  m_Name: Amazon
   m_EditorClassIdentifier: 
-  name: "\u0411\u043E\u043B\u0433\u0430\u0440\u0441\u043A\u0438\u0439 \u043F\u0435\u0440\u0435\u0446"
-  points: 30
-  ingredientPrefab: {fileID: 6926692532276034067, guid: d2d54429b4c2d1e41a98b72bbedff594, type: 3}
+  name: Amazon
+  points: 40
+  ingredientPrefab: {fileID: 4031403168743180471, guid: 09f1cd9f8d1633c4bba8eda9307cfe9e, type: 3}

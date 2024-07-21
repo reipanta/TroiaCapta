@@ -47,7 +47,7 @@ namespace UI
 
             _totalScore += CurrentMealScore;
 
-            _text.text = $"Счет: {Convert.ToInt32(_totalScore)}";
+            _text.text = $"Score: {Convert.ToInt32(_totalScore)}";
         }
 
         private float GetMultiplier(int count, int uniqueIngredientCount)

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5e7ce7c31f5467790afdcccc8e89bc2, type: 3}
-  m_Name: Meat
+  m_Name: Scythian
   m_EditorClassIdentifier: 
-  name: "\u041C\u044F\u0441\u043E"
-  points: 50
-  ingredientPrefab: {fileID: 5028576358938814020, guid: efa6e18d5a27ff54eb1cacb830068b77, type: 3}
+  name: Scythian
+  points: 20
+  ingredientPrefab: {fileID: 9110355246057411533, guid: d8db6631ee6ee7849918662aa4cadbd4, type: 3}
