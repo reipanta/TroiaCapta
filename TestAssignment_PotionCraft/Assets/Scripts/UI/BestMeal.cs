@@ -42,7 +42,7 @@ namespace UI
             _highestScoreMeal = highestScoreMeal;
 
             _text.text =
-                $"Best squad: {_highestScoreMeal.Title} ({_highestScoreMeal.IngredientCountResult}) [{_highestScoreMeal.CurrentMealScore}]";
+                $"Best squad: {_highestScoreMeal.Title} ({_highestScoreMeal.IngredientCountResult}) {_highestScoreMeal.CurrentMealScore}";
         }
     }
 }

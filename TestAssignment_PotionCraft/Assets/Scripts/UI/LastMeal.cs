@@ -71,7 +71,7 @@ namespace UI
             var data = new MealData().GetData(title: _mealTitle, _ingredientCountResult, Score.CurrentMealScore);
             LastMealResult.Add(data);
 
-            _text.text = $"Last group: {_mealTitle} ({_ingredientCountResult}) [{Score.CurrentMealScore}]";
+            _text.text = $"Last group: {_mealTitle} ({_ingredientCountResult}) {Score.CurrentMealScore}";
         }
 
         private string CheckForMeat(List<Ingredient> ingredients)
